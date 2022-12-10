@@ -12,6 +12,7 @@ const Footer = () => {
         <p>Airbnb plus</p>
         <p>Airbnb Luxe</p>
       </div>
+
       <div className="space-y-4">
         <h5 className="font-bold">ABOUT</h5>
         <p>How Airbnb works</p>
