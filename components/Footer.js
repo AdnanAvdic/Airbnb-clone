@@ -6,7 +6,7 @@ const Footer = () => {
     >
       <div className="space-y-4  text-gray-800">
         <h5 className="font-bold">ABOUT</h5>
-        <p>How Airbnb workss</p>
+        <p>How Airbnb works</p>
         <p>Newsroom</p>
         <p>Investors</p>
         <p>Airbnb plus</p>
