@@ -30,7 +30,7 @@ const Header = () => {
         <input
           type="text"
           placeholder="Start your search"
-          className="pl-5 bg-transparent outline-none flex-grow text-sm
+          className="px-5 bg-transparent outline-none flex-grow text-[12px] md:text-sm
            text-gray-600 placeholder-gray-400"
         ></input>
         <HiSearch

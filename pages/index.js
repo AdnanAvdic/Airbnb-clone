@@ -73,7 +73,9 @@ export default function Home({ exploreData, cardsData }) {
         />
       </main>
 
-      <Footer />
+      <div className="min-w-7xl">
+        <Footer />
+      </div>
     </div>
   );
 }
