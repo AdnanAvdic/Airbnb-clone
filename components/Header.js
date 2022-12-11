@@ -10,12 +10,14 @@ import {
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
+import { useRouter } from "next/router";
 
-const Header = () => {
+const Header = ({ placeholder }) => {
   const [searchInput, setSearchInput] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [numberOfGuests, setNumberOfGuests] = useState("");
+  const router = useRouter();
 
   const selectionRange = {
     startDate: startDate,
@@ -32,12 +34,27 @@ const Header = () => {
     setSearchInput("");
   };
 
+  const search = () => {
+    router.push({
+      pathname: "/search",
+      query: {
+        location: searchInput,
+        startDate: startDate.toISOString(),
+        endDate: endDate.toISOString(),
+        numberOfGuests,
+      },
+    });
+  };
+
   return (
     <header
       className="sticky top-0 z-50 grid grid-cols-3  items-center p-5 bg-white
       shadow-md md:px-10"
     >
-      <div className="relative flex h-8 cursor-pointer my-auto">
+      <div
+        className="relative flex h-8 cursor-pointer my-auto"
+        onClick={() => router.push("/")}
+      >
         <Image
           src="https://links.papareact.com/qd3"
           alt="logo"
@@ -53,7 +70,7 @@ const Header = () => {
       >
         <input
           type="text"
-          placeholder="Start your search"
+          placeholder={placeholder || "Start your Search"}
           className="px-5 bg-transparent outline-none flex-grow text-[12px] md:text-sm
            text-gray-600 placeholder-gray-400"
           value={searchInput}
@@ -91,9 +108,10 @@ const Header = () => {
             </h2>
             <HiUsers className="h-5" />
             <input
+              placeholder="0"
               value={numberOfGuests}
               type="number"
-              className="w-12 pl-2 outline-none text-red-400"
+              className="w-12 pl-2 outline-none text-red-400 placeholder:text-red-400"
               min={1}
               max={12}
               onChange={(e) => setNumberOfGuests(e.target.value)}
@@ -103,7 +121,9 @@ const Header = () => {
             <button className="flex-grow text-gray-500" onClick={resetInput}>
               Cancel
             </button>
-            <button className="flex-grow text-red-400">Search</button>
+            <button className="flex-grow text-red-400" onClick={search}>
+              Search
+            </button>
           </div>
         </div>
       )}
