@@ -19,13 +19,17 @@ a {
   text-decoration: none;
 }
 
+.rdrDateRangePickerWrapper {
+  display: inline-flex;
+}
+
 @media only screen and (max-width: 640px) {
   .rdrDateRangePickerWrapper {
     display: flex;
     flex-direction: column-reverse;
   }
-}
 
-.rdrDateRangePickerWrapper {
-  display: inline-flex;
+  .rdrDefinedRangesWrapper {
+    display: none;
+  }
 }
