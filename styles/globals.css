@@ -18,3 +18,14 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+@media only screen and (max-width: 640px) {
+  .rdrDateRangePickerWrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.rdrDateRangePickerWrapper {
+  display: inline-flex;
+}

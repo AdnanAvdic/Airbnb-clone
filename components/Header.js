@@ -78,7 +78,7 @@ const Header = () => {
       </div>
 
       {searchInput && (
-        <div className=" flex flex-col col-span-3 mx-auto mt-2">
+        <div className=" flex flex-col col-span-3 mx-auto mt-2 ">
           <DateRangePicker
             ranges={[selectionRange]}
             minDate={new Date()}
@@ -86,7 +86,7 @@ const Header = () => {
             onChange={handleSelect}
           />
           <div className="flex items-center border-b mb-4">
-            <h2 className=" text-2xl flex-grow font-semibold ">
+            <h2 className=" text-2xl flex-grow font-semibold mb-2 ">
               Number of guests
             </h2>
             <HiUsers className="h-5" />
