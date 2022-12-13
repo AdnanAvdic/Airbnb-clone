@@ -16,7 +16,12 @@ const InfoCard = ({
         hover:opacity-80 ease-in-out duration-150 first:border-t"
     >
       <div className="relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0  ">
-        <Image src={img} fill className=" object-cove rounded-2xl" />
+        <Image
+          src={img}
+          alt="info card image"
+          fill
+          className=" object-cove rounded-2xl"
+        />
       </div>
 
       <div className="flex flex-col flex-grow pl-5 ">
